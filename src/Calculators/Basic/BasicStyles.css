@@ -1,0 +1,577 @@
+/* ================= COMMON WRAPPER ================= */
+
+.calculator-wrapper{
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 20px;
+}
+
+/* ================= COMMON CONTAINER ================= */
+
+.calculator-container{
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow: 5px 8px 8px #999;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+/* ================= TITLES ================= */
+
+.calculator-container h1,
+.percentage-container h1{
+
+    font-size: 2.2rem;
+
+    font-weight: 600;
+
+    font-family: 'Times New Roman', Times, serif;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #02dffc,
+            #2563eb
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+}
+
+/* ================= SENSOR ================= */
+
+.sensor{
+
+    width: 180px;
+    height: 12px;
+
+    border-radius: 20px;
+
+    background: #666;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.sensor::before{
+
+    content: "";
+
+    position: absolute;
+
+    width: 200%;
+    height: 100%;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 5px,
+            rgba(255,255,255,0.5) 5px,
+            rgba(255,255,255,0.5) 8px
+        );
+
+    animation: sensorAnimation 3s linear infinite;
+}
+
+@keyframes sensorAnimation{
+
+    from{
+        transform: translateX(-50%);
+    }
+
+    to{
+        transform: translateX(0%);
+    }
+}
+
+/* ================= STANDARD CALCULATOR ================= */
+
+.standard-calculator-screen{
+
+    width: 100%;
+    max-width: 360px;
+
+    height: 80px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 5px;
+
+    background: #cfcfcf;
+
+    padding: 15px;
+
+    text-align: right;
+
+    font-size: 2rem;
+
+    color: #111;
+
+    box-shadow:
+        inset 3px 3px 8px #333;
+}
+
+.standard-keypad{
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.standard-calc-row{
+
+    display: flex;
+
+    gap: 15px;
+}
+
+.standard-calc-row button{
+
+    width: 75px;
+    height: 60px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    font-size: 1.6rem;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    background: #f0f0f0;
+
+    box-shadow:
+        2px 2px 4px #777;
+}
+
+.standard-calc-row button:hover{
+
+    background: #ffffff;
+}
+
+.standard-calc-row button:active{
+
+    transform: scale(0.95);
+
+    box-shadow:
+        inset 2px 2px 4px #555;
+}
+
+/* ================= SCIENTIFIC CALCULATOR ================= */
+
+.scientific-container{
+
+    gap: 20px;
+}
+
+.calculator-screen{
+
+    width: 100%;
+    max-width: 450px;
+
+    height: 80px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 5px;
+
+    background: #cfcfcf;
+
+    padding: 15px;
+
+    text-align: right;
+
+    font-size: 2rem;
+
+    color: #111;
+
+    box-shadow:
+        inset 3px 3px 8px #333;
+}
+
+.keypad{
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.calc-row{
+
+    display: flex;
+
+    gap: 12px;
+}
+
+.calc-row button{
+
+    width: 75px;
+    height: 60px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    font-size: 1.2rem;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    background: #f0f0f0;
+
+    box-shadow:
+        2px 2px 4px #777;
+}
+
+.calc-row button:hover{
+
+    background: #ffffff;
+}
+
+.calc-row button:active{
+
+    transform: scale(0.95);
+
+    box-shadow:
+        inset 2px 2px 4px #555;
+}
+
+/* ================= PERCENTAGE CALCULATOR ================= */
+
+.percentage-container{
+
+    width: 100%;
+    max-width: 550px;
+}
+
+.percentage-modes{
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.percentage-modes button{
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #e5e7eb;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        2px 2px 4px #555;
+}
+
+.percentage-modes button:hover{
+
+    background: white;
+}
+
+.percentage-modes button:active{
+
+    box-shadow:
+        inset 2px 2px 4px #555;
+}
+
+.active-mode{
+
+    background:
+        linear-gradient(
+            135deg,
+            #06b6d4,
+            #2563eb
+        ) !important;
+
+    color: white;
+}
+
+.percentage-inputs{
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+.percentage-inputs input{
+
+    width: 100%;
+    height: 60px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 10px;
+
+    padding: 0 20px;
+
+    font-size: 1.1rem;
+
+    background: #d1d5db;
+
+    box-shadow:
+        inset 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+.percentage-result{
+
+    width: 100%;
+    min-height: 70px;
+
+    border-radius: 10px;
+
+    background: #cfcfcf;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    color: #111827;
+
+    text-align: center;
+
+    padding: 10px;
+
+    box-shadow:
+        inset 2px 2px 6px #555;
+}
+
+.percentage-buttons{
+
+    width: 100%;
+
+    display: flex;
+
+    gap: 15px;
+}
+
+.percentage-buttons button{
+
+    flex: 1;
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 1.1rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        2px 2px 4px #777;
+}
+
+.percentage-buttons button:active{
+
+    box-shadow:
+        inset 2px 2px 4px #555;
+}
+
+/* ================= COMMON BUTTONS ================= */
+
+.digit{
+
+    background-color: #e0e0e0 !important;
+}
+
+.digit:hover{
+
+    background-color: #ffffff !important;
+}
+
+.fun-key{
+
+    background:
+        hsl(187, 98%, 50%) !important;
+
+    color: #111827;
+
+    font-weight: 700;
+}
+
+.scientific-btn{
+
+    background: #dbeafe !important;
+
+    color: #d81dcc;
+
+    font-weight: 600;
+}
+
+/* ================= EXPLORE BUTTON ================= */
+
+.explore-button{
+
+    padding: 10px 20px;
+
+    font-size: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #02dffc,
+            #ff00dd
+        );
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+    box-shadow:
+        2px 2px 8px rgba(0,0,0,0.2);
+}
+
+.explore-button:hover{
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,0.25);
+}
+
+.explore-button:active{
+
+    transform: scale(0.96);
+
+    box-shadow:
+        inset 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 600px){
+
+    .calculator-container{
+
+        width: 100%;
+
+        padding: 20px;
+    }
+
+    .calculator-container h1,
+    .percentage-container h1{
+
+        font-size: 1.8rem;
+    }
+
+    .standard-calculator-screen,
+    .calculator-screen{
+
+        height: 70px;
+
+        font-size: 1.5rem;
+    }
+
+    .standard-calc-row{
+
+        gap: 10px;
+    }
+
+    .standard-calc-row button{
+
+        width: 65px;
+        height: 60px;
+
+        font-size: 1.3rem;
+    }
+
+    .calc-row{
+
+        gap: 8px;
+    }
+
+    .calc-row button{
+
+        width: 58px;
+        height: 55px;
+
+        font-size: 1rem;
+    }
+
+    .percentage-modes{
+
+        grid-template-columns: 1fr;
+    }
+
+    .percentage-buttons{
+
+        flex-direction: column;
+
+        height: 100px;
+    }
+}

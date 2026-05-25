@@ -1,0 +1,274 @@
+/* ================= WRAPPER ================= */
+
+.utility-wrapper{
+
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    gap: 30px;
+    padding: 20px;
+}
+
+/* ================= CONTAINER ================= */
+
+.utility-container{
+
+    width: 100%;
+    max-width: 600px;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 5px 8px 8px #999;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+/* ================= SENSOR ================= */
+
+.utility-sensor{
+
+    width: 180px;
+    height: 12px;
+
+    border-radius: 20px;
+
+    background: #666;
+
+    position: relative;
+
+    overflow: hidden;
+
+    align-self: center;
+}
+
+.utility-sensor::before{
+
+    content: "";
+
+    position: absolute;
+
+    width: 200%;
+    height: 100%;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 5px,
+            rgba(255,255,255,0.5) 5px,
+            rgba(255,255,255,0.5) 8px
+        );
+
+    animation:
+        utilitySensor 3s linear infinite;
+}
+
+@keyframes utilitySensor{
+
+    from{
+        transform: translateX(-50%);
+    }
+
+    to{
+        transform: translateX(0%);
+    }
+}
+
+/* ================= TITLE ================= */
+
+.utility-title{
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    font-weight: 600;
+
+    font-family:
+        'Times New Roman',
+        Times,
+        serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #02dffc,
+            #2563eb
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+}
+
+/* ================= INPUTS ================= */
+
+.utility-inputs{
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.utility-input-group{
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.utility-input-group label{
+
+    font-weight: 600;
+
+    color: #111827;
+}
+
+.utility-input-group input,
+.utility-input-group select{
+
+    width: 100%;
+    height: 60px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 10px;
+
+    padding: 0 18px;
+
+    background: #d1d5db;
+
+    font-size: 1rem;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        inset 2px 2px 6px rgba(0,0,0,0.2);
+}
+
+/* ================= BUTTONS ================= */
+
+.utility-buttons{
+
+    display: flex;
+
+    gap: 15px;
+}
+
+.utility-buttons button{
+
+    flex: 1;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        2px 2px 4px #555;
+}
+
+.utility-buttons button:hover{
+
+    transform: translateY(-2px);
+}
+
+.utility-buttons button:active{
+
+    transform: scale(0.97);
+
+    box-shadow:
+        inset 2px 2px 4px #555;
+}
+
+/* ================= BUTTON COLORS ================= */
+
+.utility-calc-btn,
+.convert-btn{
+
+    background:
+        hsl(187, 98%, 50%);
+
+    color: black;
+}
+
+.utility-clear-btn,
+.clear-btn{
+
+    background: #e5e7eb;
+
+    color: black;
+}
+
+/* ================= RESULT ================= */
+
+.utility-result,
+.converter-result{
+
+    min-height: 120px;
+
+    border-radius: 10px;
+
+    background: #cfcfcf;
+
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    color: #111827;
+
+    box-shadow:
+        inset 3px 3px 8px #555;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media screen and (max-width: 600px){
+
+    .utility-container{
+
+        padding: 20px;
+    }
+
+    .utility-buttons{
+
+        flex-direction: column;
+    }
+
+    .utility-title{
+
+        font-size: 1.7rem;
+    }
+}

@@ -1,0 +1,391 @@
+.calculator-type-wrapper{
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 70px 40px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc,
+            #eef2ff
+        );
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.calculator-type-title{
+
+    font-size: 2.5rem;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgb(221, 5, 217),
+            #00e1ff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+.calculator-type-subtitle{
+
+    font-size: 1.2rem;
+
+    color: #64748b;
+
+    margin-bottom: 60px;
+
+    text-align: center;
+}
+
+/* CARDS GRID */
+
+.calculator-cards{
+
+    width: 100%;
+    max-width: 1500px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(450px, 1fr)
+        );
+
+    gap: 30px;
+}
+
+/* CARD */
+
+/* CARD */
+
+.calculator-card-item{
+
+    width: 100%;
+
+    min-height: 320px;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 28px;
+
+    padding: 35px 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    text-align: center;
+
+    transition: 0.35s ease;
+
+    border:
+        1px solid rgba(255,255,255,0.4);
+
+    box-shadow:
+        5px 8px 8px #999;
+}
+
+.calculator-card-item:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(37,99,235,0.12);
+}
+
+/* LEFT SECTION */
+
+.card-left{
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 22px;
+
+    width: 100%;
+}
+
+/* CONTENT */
+
+.card-content{
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+/* BUTTON */
+
+.open-btn{
+
+    width: 100%;
+
+    border: none;
+
+    padding: 18px 35px;
+
+    border-radius: 18px;
+
+    font-size: 1.05rem;
+
+    font-weight: 600;
+
+    color: black;
+
+    cursor: pointer;
+
+    background:
+        #02dffc;
+
+    transition: 0.35s ease;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        2px 2px 4px #555;
+}
+
+/* ICON */
+
+.card-icon{
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #02dffc,
+            #f967e5
+        );
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,0.25);
+}
+
+.card-icon i{
+
+    color: white;
+
+    font-size: 2.5rem;
+}
+
+/* CONTENT */
+
+.card-content h2{
+
+    font-size: 1.5rem;
+
+    font-weight: 600;
+
+    color: #0f172a;
+
+    margin-bottom: 10px;
+}
+
+.card-content p{
+
+    font-size: 1.05rem;
+
+    line-height: 1.7;
+
+    color: #64748b;
+}
+
+/* BUTTON */
+
+.open-btn{
+
+    min-width: 220px;
+
+    border: none;
+
+    padding: 18px 35px;
+
+    border-radius: 18px;
+
+    font-size: 1.05rem;
+
+    font-weight: 600;
+
+    color: black;
+
+    cursor: pointer;
+
+    background:
+        #02dffc;
+
+    transition: 0.35s ease;
+
+    position: relative;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        2px 2px 4px #555;
+}
+
+.open-btn::before{
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,0.4),
+            transparent
+        );
+
+    transition: 0.7s;
+}
+
+.open-btn:hover::before{
+
+    left: 100%;
+}
+
+.open-btn:hover{
+
+    transform:
+        translateY(-4px)
+        scale(1.02);
+}
+
+.open-btn:active{
+
+    box-shadow:
+        inset 2px 2px 4px #555;
+
+    transform: scale(0.96);
+}
+
+/* TABLET */
+
+@media screen and (max-width: 1100px){
+
+    .calculator-cards{
+
+        grid-template-columns: 1fr;
+    }
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 700px){
+
+    .calculator-type-wrapper{
+
+        padding: 50px 20px;
+    }
+
+    .calculator-type-title{
+
+        font-size: 2.3rem;
+    }
+
+    .calculator-card-item{
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 30px 25px;
+    }
+
+    .card-left{
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .card-content h2{
+
+        font-size: 1.4rem;
+    }
+
+    .card-content p{
+
+        font-size: 1rem;
+    }
+
+    .card-icon{
+
+        width: 75px;
+        height: 75px;
+    }
+
+    .card-icon i{
+
+        font-size: 2rem;
+    }
+
+    .open-btn{
+
+        width: 100%;
+    }
+
+    .calculator-cards{
+
+        grid-template-columns: 1fr;
+    }
+}
